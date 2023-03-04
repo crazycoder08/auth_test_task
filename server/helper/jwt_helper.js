@@ -5,7 +5,7 @@ module.exports = {
   signAccessToken: (userId) => {
     return new Promise((resolve, reject) => {
       const payload = {};
-      const secret = process.env.ACCESS_TOKEN_SECRET;
+      const secret = "ad2fb4904fd24951f39de924b8bd48a73b827e3f599e204d8bbb4ab69cc8f301";
       const options = {
         expiresIn: "30s",
         issuer: "test",
@@ -29,7 +29,7 @@ module.exports = {
     const bearerToken = authHeader.split(" ");
     const token = bearerToken[1];
 
-    JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
+    JWT.verify(token, "ad2fb4904fd24951f39de924b8bd48a73b827e3f599e204d8bbb4ab69cc8f301", (err, payload) => {
       if (err) {
         const message =
           err.name === "JsonWebTokenError" ? "Unauthorized" : err.message;
