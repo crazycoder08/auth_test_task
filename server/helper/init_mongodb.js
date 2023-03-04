@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect("mongodb://localhost:27017", {
+  .connect("mongodb+srv://developer:developer@cluster.vnrt6la.mongodb.net/auth?retryWrites=true&w=majority", {
     dbName: "auth",
   })
   .then(() => {

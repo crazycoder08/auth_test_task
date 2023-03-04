@@ -1,7 +1,6 @@
 const express = require("express");
 const createError = require("http-errors");
 require("./helper/init_mongodb");
-require("dotenv").config();
 
 const app = express();
 
