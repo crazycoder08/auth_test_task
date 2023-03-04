@@ -5,13 +5,6 @@ const User = require("../models/User");
 const createHttpError = require("http-errors");
 const { signAccessToken, verifyAccessToken } = require("../helper/jwt_helper");
 
-const express = require("express");
-const router = express.Router();
-const { authSchema } = require("../helper/validation_schema");
-const User = require("../models/User");
-const createHttpError = require("http-errors");
-const { signAccessToken, verifyAccessToken } = require("../helper/jwt_helper");
-
 router.post("/register", async (req, res, next) => {
   try {
     const result = await authSchema.validateAsync(req.body);
