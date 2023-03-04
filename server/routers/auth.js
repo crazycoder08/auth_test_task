@@ -20,7 +20,7 @@ router.post("/register", async (req, res, next) => {
       throw createHttpError.Conflict(`${result.email} is already exist!`);
 
     const user = new User(result);
-    await user.save();
+    user.save();
 
     // res.send({ accessToken });
     await res.send({ message: "User registered success" });
