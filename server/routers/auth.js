@@ -23,7 +23,7 @@ router.post("/register", async (req, res, next) => {
     await user.save();
 
     // res.send({ accessToken });
-    res.send({ message: "User registered success" });
+    await res.send({ message: "User registered success" });
   } catch (err) {
     if (err.isJoi === true) err.status = 401;
     next(err);
